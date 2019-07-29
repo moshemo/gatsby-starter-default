@@ -3,9 +3,13 @@ import styled from 'styled-components'
 import { color, space } from 'styled-system'
 import {
   FaFacebookF as Facebook,
+  FaFlickr as Flickr,
+  FaGithub as Github,
+  FaInstagram as Instagram,
+  FaLinkedin as LinkedIn,
+  FaPinterest as Pinterest,
   FaTwitter as Twitter,
   FaYoutube as Youtube,
-  FaPinterest as Pinterest,
 } from 'react-icons/fa'
 
 import { brands } from 'Helpers/brands'
@@ -18,6 +22,7 @@ import { colors } from 'Variables'
 export const IconGroup = styled.div`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 `
 
 const ScreenReader = styled.span`
@@ -65,8 +70,9 @@ const SocialLink = styled.a`
   border-radius: 50%;
   font-size: 20px;
   line-height: 1;
-  margin-left: 15px;
-  margin-right: 15px;
+  /* margin-left: 15px; */
+  /* margin-right: 15px; */
+  margin: 15px;
   padding: 1em;
   transition: all 0.3s;
 
@@ -78,10 +84,15 @@ const SocialLink = styled.a`
   }
 
   ${props => props.glyph === Facebook && `background-color: ${brands.facebook}`}
-  ${props => props.glyph === Twitter && `background-color: ${brands.twitter}`}
-  ${props => props.glyph === Youtube && `background-color: ${brands.youtube}`}
+  ${props => props.glyph === Flickr && `background-color: ${brands.flickr}`}
+  ${props => props.glyph === Github && `background-color: ${brands.github}`}
+  ${props =>
+    props.glyph === Instagram && `background-color: ${brands.instagram}`}
+  ${props => props.glyph === LinkedIn && `background-color: ${brands.linkedin}`}
   ${props =>
     props.glyph === Pinterest && `background-color: ${brands.pinterest}`}
+  ${props => props.glyph === Twitter && `background-color: ${brands.twitter}`}
+  ${props => props.glyph === Youtube && `background-color: ${brands.youtube}`}
 
   ${color}
   ${space}

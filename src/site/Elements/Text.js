@@ -5,9 +5,11 @@ import { colors } from 'Variables'
 const textStyles = css`
   ${props => props.white && `color: ${colors.white};`}
   ${props => props.light && `color: ${colors.light};`}
+  ${props => props.greyLighter && `color: ${colors.greyLighter};`}
   ${props => props.greyLight && `color: ${colors.greyLight};`}
   ${props => props.grey && `color: ${colors.grey};`}
   ${props => props.greyDark && `color: ${colors.greyDark};`}
+  ${props => props.greyDarker && `color: ${colors.greyDarker};`}
   ${props => props.dark && `color: ${colors.dark};`}
   ${props => props.black && `color: ${colors.black};`}
 
@@ -70,6 +72,23 @@ const textStyles = css`
   ${props => props.lowercase && `text-transform: lowercase;`}
   ${props => props.capitlize && `text-transform: capitlize;`}
 `
+
+export const NewTitle = styled.h1`
+  color: ${colors.black};
+  font-size: 40px;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 1.3;
+
+  ${textStyles}
+
+  ${props => props.xsmall && `font-size: 21px;`}
+  ${props => props.small && `font-size: 35px;`}
+  ${props => props.large && `font-size: 50px;`}
+
+  ${space}
+`
+
 export const Title = styled.h1`
   color: ${colors.black};
   font-size: 50px;
@@ -93,7 +112,7 @@ export const Headline = styled.h2`
   ${textStyles}
 
   ${props => props.small && `font-size: 21px;`}
-  ${props => props.large && `font-size: 36px;`}
+  ${props => props.large && `font-size: 35px;`}
 
   ${space}
 `

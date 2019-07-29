@@ -4,9 +4,9 @@ import styled from 'styled-components'
 import { space } from 'styled-system'
 import {
   Container,
-  Blurb,
   Headline,
   Text,
+  NewTitle as Title,
   IconGroup,
   // ListIcon,
   SocialIcon as Icon,
@@ -15,28 +15,50 @@ import {
   End,
   UL,
 } from 'Elements'
-import { Field, FormButton } from './Form/Styles'
+import { Field as FieldBase, FormButton } from './Form/Styles'
 import { breakpoints as bp, colors } from 'Variables'
 // import { brands } from 'Helpers/brands'
 import { CurrentYear } from 'Utilities'
 
 import {
+  FaAngleRight as Angle,
   FaFacebookF as Facebook,
+  FaFlickr as Flickr,
+  FaGithub as Github,
+  FaInstagram as Instagram,
+  FaLinkedin as LinkedIn,
+  FaPinterest as Pinterest,
   FaTwitter as Twitter,
   FaYoutube as Youtube,
-  FaPinterest as Pinterest,
-  FaAngleRight as Angle,
 } from 'react-icons/fa'
 
 const Footer = styled.footer`
   grid-area: footer;
 `
 
-const SocialFooter = styled.section`
+const SignupFooter = styled.section`
   background-color: #333;
   padding-bottom: 100px;
   padding-top: 100px;
   text-align: center;
+`
+
+const SignupText = styled.div`
+  margin-bottom: 30px;
+`
+const SignupForm = styled.form`
+  margin: 0 auto;
+  width: 60%;
+`
+
+const Field = styled(FieldBase)`
+  background-color: ${colors.greyLighter};
+`
+
+const InputSection = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
+  grid-gap: 14px;
 `
 
 const ContentFooter = styled.section`
@@ -158,8 +180,41 @@ const CopyFooter = styled.section`
 
 export const MainFooter = props => (
   <Footer>
-    <SocialFooter>
-      <Headline as="h4" sub2 white pb={10}>
+    <SignupFooter>
+      <Container>
+        <SignupText>
+          <Title white small mb={15}>
+            Signup for{' '}
+            <b style={{ color: colors.accent }}>Our Free Newsletter </b>
+            and Stay Up to Date
+          </Title>
+          <Text greyLighter large looser regular>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+            semper vulputate tincidunt.
+          </Text>
+        </SignupText>
+        <SignupForm>
+          <InputSection>
+            <Field
+              tall
+              label="Name"
+              name="name"
+              placeholder="Name"
+              type="text"
+            />
+            <Field
+              tall
+              label="Name"
+              name="email"
+              placeholder="Email"
+              type="email"
+            />
+          </InputSection>
+          <FormButton type="submit">Signup Today!</FormButton>
+        </SignupForm>
+      </Container>
+
+      {/* <Headline as="h4" sub2 white pb={10}>
         Follow us on social media
       </Headline>
       <Blurb as="h5" grey thinner pb={50}>
@@ -174,8 +229,8 @@ export const MainFooter = props => (
           glyph={Pinterest}
           screen="Pinterest"
         />
-      </IconGroup>
-    </SocialFooter>
+      </IconGroup> */}
+    </SignupFooter>
 
     <ContentFooter>
       <Container>
@@ -193,7 +248,37 @@ export const MainFooter = props => (
         </Start>
 
         <Middle>
-          <Headline white small mb={15}>
+          {/* <SocialFooter> */}
+          <Headline center small white mb={15}>
+            Follow us on social media
+          </Headline>
+          {/* <Blurb as="h5" grey thinner pb={10}>
+            Reach out to us and join the conversation
+          </Blurb> */}
+          <IconGroup>
+            <Icon
+              goTo="http://facebook.com"
+              glyph={Facebook}
+              screen="Facebook"
+            />
+            <Icon goTo="http://youtube.com" glyph={Youtube} screen="Youtube" />
+            <Icon goTo="http://twitter.com" glyph={Twitter} screen="Twitter" />
+            <Icon
+              goTo="http://pinterest.com"
+              glyph={Pinterest}
+              screen="Pinterest"
+            />
+            <Icon goTo="http://linked.com" glyph={LinkedIn} screen="LinkedIn" />
+            <Icon goTo="http://github.com" glyph={Github} screen="Github" />
+            <Icon goTo="http://flickr.com" glyph={Flickr} screen="Flickr" />
+            <Icon
+              goTo="http://instagram.com"
+              glyph={Instagram}
+              screen="Instagram"
+            />
+          </IconGroup>
+          {/* </SocialFooter> */}
+          {/* <Headline white small mb={15}>
             Send Us a Message
           </Headline>
           <form>
@@ -208,7 +293,7 @@ export const MainFooter = props => (
             />
 
             <FormButton type="submit">Send Your Message</FormButton>
-          </form>
+          </form> */}
         </Middle>
         <End>
           <Headline white small mb={15}>

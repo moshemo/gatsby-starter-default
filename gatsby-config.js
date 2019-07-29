@@ -11,7 +11,9 @@ module.exports = {
     'gatsby-plugin-root-import',
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
+    'gatsby-plugin-svgr',
 
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
 
     {
@@ -26,6 +28,14 @@ module.exports = {
         icon: `src/assets/img/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    // {
+    //   resolve: 'gatsby-plugin-react-svg',
+    //   options: {
+    //     rule: {
+    //       include: '/src/assets/img/',
+    //     },
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-root-import',
       options: {
@@ -48,6 +58,9 @@ module.exports = {
         Structure: path.join(__dirname, 'src/site/Structure'),
         Utilities: path.join(__dirname, 'src/site/Utilities'),
 
+        // Src
+        Images: path.join(__dirname, 'src/assets/img'),
+
         // Styles
         Global: path.join(__dirname, 'src/styles/global'),
         Helpers: path.join(__dirname, 'src/styles/helpers'),
@@ -66,6 +79,28 @@ module.exports = {
         path: `${__dirname}/src/assets/img`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `news`,
+        path: `${__dirname}/src/news`,
+      },
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://news.google.com/rss/search?q=medtech+venture&hl=en-US&gl=US&ceid=US:en`,
+        name: `MedTechVenture`,
+        // Optional
+        // Read parser document: https://github.com/bobby-brennan/rss-parser#readme
+        parserOption: {
+          customFields: {
+            item: ['itunes:duration'],
+          },
+        },
+      },
+    },
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

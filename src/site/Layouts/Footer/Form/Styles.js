@@ -14,20 +14,22 @@ const FieldLabel = styled.label`
 
 const inputStyles = css`
   appearance: none;
-  background-color: #191919;
-  border: 1px solid rgba(237, 237, 237, 0.1);
+  background-color: ${colors.light};
+  border: 1px solid ${colors.greyDarker};
   border-radius: 2px;
   box-shadow: none;
   box-sizing: border-box;
   color: #fff;
   font-size: 13px;
   font-weight: 300;
-  padding: 4px 12px;
+  height: 40px;
+  margin-bottom: 6px;
+  padding: 5px 14px;
   width: 100%;
 
   :focus {
-    background-color: #000;
-    border-color: #555;
+    background-color: ${colors.tertiaryLighter};
+    border-color: ${colors.greyDark};
     outline: 0;
   }
 `
@@ -36,6 +38,7 @@ const FieldInput = styled.input`
   ${inputStyles}
   min-height: 33px;
 
+  ${props => props.tall && `min-height: 47px;`};
   ${props =>
     (props.type === 'checkbox' || props.type === 'radio') && `display: inline;`}
 `
@@ -59,16 +62,19 @@ export const Field = props => (
 // `
 
 export const FormButton = styled(Button)`
-  border: 1px solid ${colors.dark};
-  font-size: 13px;
-  font-weight: 500;
-  height: 33px;
-  margin: 3px 0 0;
+  background-color: ${colors.accent};
+  border: 5px solid ${colors.accent};
+  font-size: 15px;
+  font-weight: 600;
+  min-height: 47px;
+  margin: 12px 0 0;
   transition: all 0.5 ease-in-out;
   width: 100%;
 
   :hover {
-    background-color: #000;
-    color: ${colors.accent};
+    /* background-color: #000; */
+    /* color: ${colors.accent}; */
+    background-color: ${colors.accentDark};
+    border-color: ${colors.accentDark};
   }
 `

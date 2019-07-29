@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { border } from 'styled-system'
+import { border, space } from 'styled-system'
 import { colors } from 'Variables'
 
 export const Divider = styled.hr`
@@ -46,4 +46,20 @@ export const Divider = styled.hr`
     `}
 
     ${border}
+`
+
+export const StyledDivider = styled.hr`
+  border-top-color: ${props => props.color || colors.accentDark};
+  border-top-style: solid;
+  border-top-width: ${props => props.thickness || '2'}px;
+
+  height: ${props => props.height || '2'}px;
+  width: ${props => props.width || `100`}px;
+
+  max-height: 10px;
+  max-width: 100%;
+
+  ${props => props.center && `margin-left: auto; margin-right: auto;`}
+
+  ${space}
 `

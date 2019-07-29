@@ -138,10 +138,7 @@ const Profile = props => {
 
   return (
     <OverlayContainer>
-      <OverlayImage
-        alt="Ploni Almoni Profile Image"
-        fluid={imageName.node.fluid}
-      />
+      <OverlayImage alt={props.title} fluid={imageName.node.fluid} />
       <Overlay>
         <OverlayText>
           <Headline small>{props.title}</Headline>
@@ -198,9 +195,9 @@ const IconBoxBase = styled.div`
     fill: ${colors.primary};
   }
 
-  path {
+  /* path {
     ${props => props.id && `fill: url(#${props.id})`};
-  }
+  } */
 `
 
 export const IconBox = props => (
