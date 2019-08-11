@@ -2,9 +2,9 @@ const path = require('path')
 
 module.exports = {
   siteMetadata: {
-    title: `Young Starup`,
-    description: `Young Startup Description...`,
-    author: `Young Startup`,
+    title: `Learning Firebase`,
+    description: `Learning how to use firebase`,
+    author: `Moshe Morris`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -44,19 +44,15 @@ module.exports = {
         // Main Folders
         assets: path.join(__dirname, 'src/assets'),
         pages: path.join(__dirname, 'src/pages'),
-        site: path.join(__dirname, 'src/site'),
+        components: path.join(__dirname, 'src/components'),
         styles: path.join(__dirname, 'src/styles'),
 
         // Site
-        Ads: path.join(__dirname, 'src/site/Ads'),
-        Elements: path.join(__dirname, 'src/site/Elements'),
-        Forms: path.join(__dirname, 'src/site/Forms'),
-        Layouts: path.join(__dirname, 'src/site/Layouts'),
-        Lists: path.join(__dirname, 'src/site/Lists'),
-        Pages: path.join(__dirname, 'src/site/Pages'),
-        SEO: path.join(__dirname, 'src/site/SEO'),
-        Structure: path.join(__dirname, 'src/site/Structure'),
-        Utilities: path.join(__dirname, 'src/site/Utilities'),
+        Auth: path.join(__dirname, 'src/components/Auth'),
+        Dashboard: path.join(__dirname, 'src/components/Dashboard'),
+        Elements: path.join(__dirname, 'src/components/Elements'),
+        Layouts: path.join(__dirname, 'src/components/Layouts'),
+        Utilities: path.join(__dirname, 'src/components/Utilities'),
 
         // Src
         Images: path.join(__dirname, 'src/assets/img'),
@@ -64,10 +60,10 @@ module.exports = {
         // Styles
         Global: path.join(__dirname, 'src/styles/global'),
         Helpers: path.join(__dirname, 'src/styles/helpers'),
-        Brands: path.join(__dirname, 'src/styles/Helpers/brands'),
-        Elevation: path.join(__dirname, 'src/styles/Helpers/elevation'),
-        Material: path.join(__dirname, 'src/styles/Helpers/material-colors'),
-        Responsive: path.join(__dirname, 'src/styles/Helpers/responsive'),
+        Brands: path.join(__dirname, 'src/styles/helpers/brands'),
+        Elevation: path.join(__dirname, 'src/styles/helpers/elevation'),
+        Material: path.join(__dirname, 'src/styles/helpers/material-colors'),
+        Responsive: path.join(__dirname, 'src/styles/helpers/responsive'),
         Theme: path.join(__dirname, 'src/styles/theme'),
         Variables: path.join(__dirname, 'src/styles/variables'),
       },
@@ -79,30 +75,5 @@ module.exports = {
         path: `${__dirname}/src/assets/img`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `news`,
-        path: `${__dirname}/src/news`,
-      },
-    },
-    {
-      resolve: `gatsby-source-rss-feed`,
-      options: {
-        url: `https://news.google.com/rss/search?q=medtech+venture&hl=en-US&gl=US&ceid=US:en`,
-        name: `MedTechVenture`,
-        // Optional
-        // Read parser document: https://github.com/bobby-brennan/rss-parser#readme
-        parserOption: {
-          customFields: {
-            item: ['itunes:duration'],
-          },
-        },
-      },
-    },
-
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }

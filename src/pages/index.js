@@ -1,11 +1,10 @@
 import React from 'react'
 import MainLayout from 'Layouts/main'
-import { HomeList } from 'Lists'
 
-const IndexPage = () => (
+const HomePage = () => (
   <MainLayout>
-    <HomeList />
+    <h1>Home</h1>
   </MainLayout>
 )
 
-export default IndexPage
+export default HomePage
