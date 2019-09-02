@@ -1,4 +1,5 @@
 import { css } from 'styled-components'
+
 import { colors, fonts } from 'Variables/'
 
 const Generic = css`

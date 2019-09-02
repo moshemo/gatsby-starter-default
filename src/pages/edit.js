@@ -1,35 +1,45 @@
 import React from 'react'
-import Editor from '@stfy/react-editor.js'
+import styled from 'styled-components'
 
-import MainLayout from 'Layouts/main'
+// import firebase from 'Config'
+import { editPageConfig } from 'Config'
+import { MainLayout } from 'Layouts'
+import { Editor } from 'Plugins'
 
-const EditPage = () => (
-  <MainLayout>
-    <h1>Edit</h1>
-    <Editor
-      autofocus
-      holderId="editorjs-container"
-      // excludeDefaultTools={['header']}
-      onChange={data => console.log(data)}
-      // customTools={{
-      //   header: CustomHeader,
-      // }}
-      onReady={() => console.log('Start!')}
-      data={{
-        time: 1554920381017,
-        blocks: [
-          {
-            type: 'header',
-            data: {
-              text: 'Hello Editor.js',
-              level: 2,
-            },
-          },
-        ],
-        version: '2.12.4',
-      }}
-    />
-  </MainLayout>
-)
+// function useArticles() {
+//   const [articles, setArticles] = useState([])
 
-export default EditPage
+//   useEffect(() => {
+//     firebase
+//       .firestore()
+//       .collection('articles')
+//       .add({
+//         title: 'This is the title',
+//         author: 'Ploni Almoni',
+//         content:
+//           '<p>Here is some content</p><p>You see that it is written in html</p>',
+//       })
+//   }, [])
+// }
+
+const FroalaPage = () => {
+  // const articles = useArticles()
+
+  return (
+    <MainLayout>
+      <h1>Edit</h1>
+      {/* <EditPageForm /> */}
+      <EditorWrapper>
+        <Editor tag="textarea" config={editPageConfig} />
+      </EditorWrapper>
+    </MainLayout>
+  )
+}
+
+const EditorWrapper = styled.div`
+  /* margin: 50px auto; */
+  max-width: 800px;
+  padding: 32px;
+`
+
+export default FroalaPage

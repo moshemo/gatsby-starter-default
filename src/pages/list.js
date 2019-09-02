@@ -1,8 +1,7 @@
 import React from 'react'
-import MainLayout from 'Layouts/main'
 
-import { Card, CardTitle, List, ListItem, Start, End, Text } from 'Elements'
-
+import { Card, CardTitle, List, ListItem, Start, End, Text } from 'Components'
+import { MainLayout } from 'Layouts'
 import { colors } from 'Variables'
 
 const ListPage = () => {

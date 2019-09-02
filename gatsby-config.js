@@ -39,33 +39,36 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-root-import',
       options: {
-        src: path.join(__dirname, 'src'),
+        SRC: path.join(__dirname, 'src'),
 
         // Main Folders
-        assets: path.join(__dirname, 'src/assets'),
-        pages: path.join(__dirname, 'src/pages'),
-        components: path.join(__dirname, 'src/components'),
-        styles: path.join(__dirname, 'src/styles'),
+        Assets: path.join(__dirname, 'src/assets'),
+        Components: path.join(__dirname, 'src/components'),
+        Config: path.join(__dirname, 'src/config'),
+        Layouts: path.join(__dirname, 'src/layouts'),
+        Pages: path.join(__dirname, 'src/pages'),
+        Plugins: path.join(__dirname, 'src/plugins'),
+        Styles: path.join(__dirname, 'src/styles'),
+        Utilities: path.join(__dirname, 'src/utilities'),
 
-        // Site
-        Auth: path.join(__dirname, 'src/components/Auth'),
-        Dashboard: path.join(__dirname, 'src/components/Dashboard'),
-        Elements: path.join(__dirname, 'src/components/Elements'),
-        Layouts: path.join(__dirname, 'src/components/Layouts'),
-        Utilities: path.join(__dirname, 'src/components/Utilities'),
-
-        // Src
+        // Assets
         Images: path.join(__dirname, 'src/assets/img'),
 
         // Styles
-        Global: path.join(__dirname, 'src/styles/global'),
-        Helpers: path.join(__dirname, 'src/styles/helpers'),
         Brands: path.join(__dirname, 'src/styles/helpers/brands'),
         Elevation: path.join(__dirname, 'src/styles/helpers/elevation'),
+        Global: path.join(__dirname, 'src/styles/global'),
+        Helpers: path.join(__dirname, 'src/styles/helpers'),
         Material: path.join(__dirname, 'src/styles/helpers/material-colors'),
         Responsive: path.join(__dirname, 'src/styles/helpers/responsive'),
         Theme: path.join(__dirname, 'src/styles/theme'),
         Variables: path.join(__dirname, 'src/styles/variables'),
+
+        // Utilities
+        Classes: path.join(__dirname, 'src/utilities/classes'),
+        Context: path.join(__dirname, 'src/utilities/context'),
+        Functions: path.join(__dirname, 'src/utilities/functions'),
+        Hooks: path.join(__dirname, 'src/utilities/hooks'),
       },
     },
     {

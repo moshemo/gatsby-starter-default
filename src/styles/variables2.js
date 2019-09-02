@@ -1,4 +1,4 @@
-import { material } from 'Helpers/material-colors'
+import { material } from 'Helpers'
 
 // Breakpoints
 export const breakpoints = {
