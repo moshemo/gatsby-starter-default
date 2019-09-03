@@ -1,25 +1,10 @@
 import styled from 'styled-components'
-import { InputTextarea } from './InputTextarea'
 
+import { InputCss } from './base/InputCss'
+import { forms } from 'Variables'
 
 export const Textarea = styled.textarea`
+  ${InputCss}
 
-  ${InputTextarea}
-
-  display: block;
-  max-width: 100%;
-  min-width: 100%;
-  padding: 0.625em;
-  resize: vertical;
-
-  &:not([rows]) {
-    max-height: 600px;
-    min-height: 120px;
-  }
-
-  &[rows] {
-    height: initial;
-  }
-
-  ${props => props.fixed && `resize: none;`}
+  min-height: ${forms.textarea.minHeight};
 `

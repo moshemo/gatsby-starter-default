@@ -10,7 +10,7 @@ export const FooterBase = styled.footer`
   align-items: center;
   justify-content: space-between;
 
-  background-color: ${colors.greyLighter};
+  background-color: ${colors.offWhite};
 
   /* color: ${colors.greyDark}; */
   font-size: 14px;

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { NavBase, NavLink, Text } from 'Components'
+import { NavBase, NavLink, Text, Title } from 'Components'
 import { colors } from 'Variables'
 
 export const SidebarBase = styled.div`
@@ -15,8 +15,8 @@ export const SidebarBase = styled.div`
     'sidebar-middle'
     'sidebar-bottom';
 
-  background-color: ${colors.white};
-  /* color: ${colors.dark}; */
+  background-color: ${colors.secondaryDarker};
+  color: ${colors.light};
   min-height: 100vh;
   text-transform: uppercase;
 `
@@ -35,10 +35,10 @@ export const SidebarTop = styled.div`
   }
 
   ${NavLink}, ${Text} {
-    color: ${colors.dark};
+    color: ${colors.offWhite};
     
     :hover {
-      color: ${colors.black};
+      color: ${colors.light};
     }
   }
 
@@ -57,7 +57,7 @@ export const SidebarMiddle = styled.div`
   /* padding: 36px 24px; */
 
   svg {
-    color: ${colors.greyDarker};
+    color: ${colors.light};
     height: 18px;
     width: 18px;
   }
@@ -71,11 +71,12 @@ export const SidebarMiddle = styled.div`
     width: 100%;
 
     :hover {
-      background-color: ${colors.primaryLighter};
+      background-color: ${colors.primary};
     }
   }
 
   ${Text} {
+    color: ${colors.light};
     font-size: 14px;
     font-weight: 400;
     line-height: 1em;

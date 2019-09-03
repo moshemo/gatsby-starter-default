@@ -1,20 +1,16 @@
 import React from 'react'
 
-import { Input, Textarea } from 'Components/Forms'
+// import { Input, Password, Select, Textarea } from 'Components/Forms'
+import { Input } from 'Components/Forms/Input2'
 import { MainLayout } from 'Layouts'
 
 const HomePage = () => (
   <MainLayout>
     <h1>Home</h1>
-    <Input placeholder="Enter your name..." />
-    <Input color="accent" fontSize="xl" />
-    <Input fontSize="xs" />
-    <Input />
-    <Input rounded />
-    <Input static />
-    <Input focus />
-    <Textarea />
-    <Textarea fixed />
+    <form>
+      <Input label="Name" placeholder="Name" />
+      <Input label="Email" placeholder="Email" type="email" />
+    </form>
   </MainLayout>
 )
 

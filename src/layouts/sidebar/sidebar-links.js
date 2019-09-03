@@ -38,7 +38,7 @@ export const ViewSiteLink = props => (
 
 export const ContentLinks = props => (
   <NavBase style={{ flexDirection: 'column' }}>
-    <Title xsmall thin m={'32px 32px 7px'}>
+    <Title xsmall m={'32px 32px 7px'}>
       Content
     </Title>
     <NavLink to="/">

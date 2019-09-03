@@ -6,7 +6,7 @@ import { colors } from 'Variables'
 export const HeaderBase = styled.header`
   grid-area: header;
 
-  background-color: ${colors.greyLighter};
+  background-color: ${colors.offWhite};
   color: ${colors.dark};
   font-size: 16px;
   font-weight: 500;

@@ -15,7 +15,7 @@ export const colors = {
   offWhite: material.grey.m50,
   light: material.grey.m100,
 
-  greyLighter: material.blueGrey.m50,
+  greyLighter: material.blueGrey.m200,
   greyLight: material.blueGrey.m300,
   grey: material.blueGrey.m400,
   greyDark: material.blueGrey.m500,
@@ -158,75 +158,18 @@ export const fontWeight = {
   boldest: 900,
 }
 
-
 export const forms = {
-
-  file: {
-    borderColor: colors.greyLighter,
-    radius: 0,
-
-    cta: {
-      activeColor: colors.greyDarker,
-      backgroundColor: colors.light,
-      textColor: colors.greyDark,
-      hoverColor: colors.greyDarker,
-    },
-
-    name: {
-      borderColor: colors.greyLighter,
-      borderStyle: 'solid',
-      borderWidth: '1px 1px 1px 0',
-      maxWidth: '16em',
-    },
-  },
-
   input: {
-    arrowColor: colors.link,
-    bgColor: colors.white,
-    borderColor: colors.greyLighter,
-    borderRadius: 0,
-    borderWidth: '1px',
-    textColor: colors.greyDarker,
-    height: "2.25em",
+    backgroundColor: colors.white,
+    border: `1px solid ${material.grey.m300}`,
+    borderRadius: '0',
+    boxShadow: 'none',
     fontSize: '16px',
-    lineHeight: 1.5,
-    paddingHorizontal: (16 * 0.625) - 1,
-    paddingVertical: (16 * 0.375) - 1,
-    placeholderColor: colors.grey,
-
-    active: {
-      borderColor: material.blue.m300,
-      shadow: `0 0 0 0.125em rgba(0, 0, 0, 0.25)`,
-    },
-
-    disabled: {
-      textColor: colors.grey,
-      bgColor: colors.light,
-      borderColor: colors.light,
-      placeholderColor: colors.greyLight,
-    },
-
-    focus: {
-      borderColor: material.blue.m300,
-      shadow: `0 0 0 0.125em rgba(0, 0, 0, 0.25)`,
-    },
-
-    hover: {
-      borderColor: colors.greyLight,
-    },
-
-    icon: {
-      batextColorse: colors.greyLighter,
-      activeColor: colors.grey,
-    }
+    height: '38px',
+    padding: '6px 10px',
+    focusBorder: `1px solid ${colors.secondaryLight}`,
   },
-
-  label: {
-    textColor: colors.greyDarker,
-    weight: 700
-  },
-
-  message: {
-    fontSize: fonts.size.xs,
+  textarea: {
+    minHeight: '65px',
   },
 }
