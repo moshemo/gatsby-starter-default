@@ -4,4 +4,14 @@ export const Label = styled.label`
   display: block;
   margin-bottom: 0.3rem;
   font-weight: 600;
+
+  ${props =>
+    props.horizontal &&
+    `
+      display: inline-block;
+      margin-left: 2.5rem;
+      margin-right: 1rem;
+      
+      :first-child { margin-left: 0;}
+    `}
 `

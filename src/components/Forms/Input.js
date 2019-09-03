@@ -1,150 +1,98 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { forms } from 'Variables'
 import { InputCss } from './base/InputCss'
+import { Label } from './Label'
+import { colors, forms } from 'Variables'
 
-import { Fieldset } from './Fieldset'
-// import { Label } from './Label'
-import { Legend } from './Legend'
+export const InputBase = styled.div`
+  margin-bottom: ${forms.input.marginBottom};
+  /* margin-bottom: 30px;
+  min-height: 90px; */
+`
 
-import { breakpoints as bp } from 'Variables'
-
-export const InputBase = styled.input.attrs(props => ({ type: 'text' }))`
+const InputContent = styled.input`
   ${InputCss};
-`
-
-export const Checkbox = styled.input.attrs(props => ({ type: 'checkbox' }))`
-  display: inline;
-`
-
-export const Radio = styled.input.attrs(props => ({ type: 'radio' }))`
-  display: inline;
-`
-
-export const Email = styled(InputBase).attrs(props => ({ type: 'email' }))``
-export const Number = styled(InputBase).attrs(props => ({ type: 'number' }))``
-export const Password = styled(InputBase).attrs(props => ({
-  type: 'password',
-}))``
-export const Search = styled(InputBase).attrs(props => ({ type: 'search' }))``
-export const TextInput = styled(InputBase).attrs(props => ({ type: 'text' }))``
-export const Tel = styled(InputBase).attrs(props => ({ type: 'tel' }))``
-export const URL = styled(InputBase).attrs(props => ({ type: 'url' }))``
-
-const Control = styled.div`
-  box-sizing: border-box;
-  clear: both;
-  font-size: 1rem;
-  position: relative;
-  text-align: left;
-`
-
-const Field = styled.div`
-  :not(:last-child) {
-    margin-bottom: 0.75rem;
-  }
+  
 
   ${props =>
-    props.horizontal &&
-    ` 
-      @media screen and (min-width: ${bp.md}), print { 
-      display: flex; }
-    `}
-`
+    props.plain &&
+    `
+    background-color: transparent;
+    border: none;
+    :focus { border: none; }
+  `}
 
-const FieldLabelBase = styled.div`
-  @media screen and (min-width: ${bp.md}) {
-    margin-bottom: 0.5rem;
-  }
-
-  @media screen and (min-width: ${bp.md}), print {
-    flex-basis: 0;
-    flex-grow: 1;
-    flex-shrink: 0;
-    margin-right: 1.5rem;
-    padding-top: 0.375em;
-    text-align: right;
-    /* font-size: 0.75rem; */
-  }
-`
-
-const FieldBodyBase = styled.div`
-  ${Field} ${Field} {
-    margin-bottom: 0;
-  }
-
-  @media screen and (min-width: ${bp.md}) {
-    display: flex;
-    flex-basis: 0;
-    flex-grow: 5;
-    flex-shrink: 1;
-
-    ${Field} {
-      margin-bottom: 0;
+  ${props => props.fullWidth && `grid-column: 1 / -1;`}
+  ${props => {
+    if (props.error) {
+      return `border-color: ${colors.error}`
+    } else if (props.info) {
+      return `border-color: ${colors.info}`
+    } else if (props.success) {
+      return `border-color: ${colors.success}`
+    } else if (props.warning) {
+      return `border-color: ${colors.warning}`
     }
-    > ${Field} {
-      flex-shrink: 1;
-      :not(:last-child) {
-        margin-right: 0.75rem;
-      }
+  }};
+
+/* ${props => props.message && `margin-bottom 0;`} */
+`
+
+const InputSection = styled.div``
+
+const InputIcon = styled.i``
+const Message = styled.p`
+  color: ${props => {
+    if (props.error) {
+      return colors.error
+    } else if (props.info) {
+      return colors.info
+    } else if (props.success) {
+      return colors.success
+    } else if (props.warning) {
+      return colors.warning
     }
-  }
-`
-const Icon = styled.span``
+  }};
 
-const LabelBase = styled.label`
-  color: #363636;
-  display: block;
-  font-size: ${forms.input.fontSize};
-  font-weight: 700;
-
-  :not(:last-child) {
-    margin-bottom: 0.5em;
-  }
+  font-size: 0.875rem;
+  padding: 0;
+  margin: 0.25rem 0 0;
 `
 
-const Message = styled.p``
+export const Input = props => {
+  const { iconRight, iconLeft, forId, label, message } = props
+  return (
+    <InputBase>
+      <Label htmlFor={forId} {...props}>
+        {label}
+      </Label>
+      <InputSection>
+        <InputContent id={forId} type="text" {...props} />
+        {iconLeft && <InputIcon side="left" />}
+        {iconRight && <InputIcon side="right" />}
+        {message && <Message {...props}>{message}</Message>}
+      </InputSection>
+    </InputBase>
+  )
+}
 
-const FieldLabel = (props, { label }) => (
-  <FieldLabelBase>
-    <LabelBase>{label}</LabelBase>
-  </FieldLabelBase>
-)
+export const Date = props => <Input type="date" {...props} />
+export const DateTimeLocal = props => <Input type="datetime-local" {...props} />
+export const Email = props => <Input type="email" {...props} />
+export const Hidden = props => <Input type="hidden" {...props} />
+export const Month = props => <Input type="month" {...props} />
+export const Number = props => <Input type="number" {...props} />
+export const Password = props => <Input type="password" {...props} />
 
-const Label = ({ label }) => <LabelBase>{label}</LabelBase>
+export const Search = props => <Input type="search" {...props} />
+export const Text = props => <Input type="text" {...props} />
+export const Tel = props => <Input type="tel" {...props} />
+export const Time = props => <Input type="time" {...props} />
+export const URL = props => <Input type="url" {...props} />
+export const Week = props => <Input type="week" {...props} />
 
-const InputContent = (props, { iconLeft, iconRight }) => (
-  <>
-    <InputBase {...props} />
-    {iconLeft && <Icon side="left" />}
-    {iconRight && <Icon side="right" />}
-  </>
-)
-
-const FieldBody = (props, { children }) => (
-  <FieldBodyBase>
-    <Field>
-      <Control>{children}</Control>
-    </Field>
-  </FieldBodyBase>
-)
-
-export const Input = (
-  props,
-  { label, helpMessage, horizontal, iconRight, iconLeft }
-) => (
-  <Field horizontal>
-    {horizontal ? <FieldLabel label={label} /> : <Label label={label} />}
-    {horizontal ? (
-      <FieldBody>
-        <InputContent {...props} />
-      </FieldBody>
-    ) : (
-      <Control>
-        <InputContent {...props} />
-      </Control>
-    )}
-    {helpMessage && <Message />}
-  </Field>
-)
+export const Color = props => <Input plain type="color" {...props} />
+export const File = props => <Input plain type="file" {...props} />
+export const Image = props => <Input plain type="image" {...props} />
+export const Range = props => <Input plain type="range" {...props} />

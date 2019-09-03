@@ -53,16 +53,16 @@ export const colors = {
   onError: material.grey.m50,
 
   info: material.blue.m400,
+  error: material.red.m400,
   success: material.green.m400,
   warning: material.yellow.m400,
-  error: material.red.m400,
 
   link: material.blue.m500,
   linkVisited: material.purple.m600,
   linkHover: material.grey.m800,
   linkFocus: material.grey.m800,
-  linkActive: material.grey.m800,
 
+  linkActive: material.grey.m800,
   code: material.red.m500,
 }
 
@@ -166,10 +166,12 @@ export const forms = {
     boxShadow: 'none',
     fontSize: '16px',
     height: '38px',
+    marginBottom: '24px',
     padding: '6px 10px',
     focusBorder: `1px solid ${colors.secondaryLight}`,
+    width: '100%',
   },
   textarea: {
-    minHeight: '65px',
+    minHeight: '95px',
   },
 }

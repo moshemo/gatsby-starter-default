@@ -1,7 +1,0 @@
-export * from './Checkbox'
-export * from './Field'
-export * from './Fieldset'
-export * from './Input'
-export * from './Radio'
-export * from './Select'
-export * from './Textarea'

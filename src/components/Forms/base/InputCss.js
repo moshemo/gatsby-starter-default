@@ -3,7 +3,6 @@ import { css } from 'styled-components'
 import { forms } from 'Variables'
 
 export const InputCss = css`
-  appearance: none;
   background-color: ${forms.input.backgroundColor};
 
   border: ${forms.input.border};
@@ -13,8 +12,26 @@ export const InputCss = css`
   box-sizing: border-box;
 
   height: ${forms.input.height};
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */
   padding: ${forms.input.padding};
+  width: ${forms.input.width};
+
+  [type='email'],
+  [type='number'],
+  [type='password'],
+  [type='search'],
+  [type='tel'],
+  [type='text'],
+  [type='url'],
+  [type='color'],
+  [type='date'],
+  [type='month'],
+  [type='week'],
+  [type='datetime'],
+  [type='datetime-local'],
+  :not([type]) {
+    appearance: none;
+  }
 
   :focus {
     border: ${forms.input.focusBorder};
