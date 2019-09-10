@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-export function useForms(initialState, auth) {
-  const [values, setValues] = useState(initialState)
+export function useForms(initialValues, auth) {
+  const [values, setValues] = useState(initialValues)
 
   function handleChange(event) {
     event.persist()

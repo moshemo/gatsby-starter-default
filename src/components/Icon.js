@@ -105,7 +105,7 @@ export const SocialIcon = props => (
   </SocialLink>
 )
 
-export const Icon = props => <props.name />
+export const Icon = props => <props.name {...props} />
 
 // const SvgGradientBase = styled.svg.attrs(props => ({
 //   'aria-hidden': 'true',

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { InputBase } from './Input'
+import { InputBase } from './Input/Input'
 import { Label } from './Label'
 
 export const Form = styled.form`
@@ -9,7 +9,8 @@ export const Form = styled.form`
     `
     display: grid;
     grid-gap: 24px;
-    grid-template-columns: ${props.columns === '3' ? `1fr 1fr 1fr` : `1fr 1fr`}
+    
+    grid-template-columns: ${props.columns};}
   `}
 
   ${props =>

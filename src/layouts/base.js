@@ -6,6 +6,9 @@ import { ThemeProvider } from 'styled-components'
 import { FirebaseContext } from 'Context'
 import GlobalCss from 'Global'
 import theme from 'Theme'
+
+import { iconLibrary } from 'Styles/icons'
+
 export const BaseLayout = ({ children }) => {
   // const { firebase } = useContext(FirebaseContext)
   return (

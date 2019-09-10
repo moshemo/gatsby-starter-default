@@ -15,11 +15,11 @@ export const colors = {
   offWhite: material.grey.m50,
   light: material.grey.m100,
 
-  greyLighter: material.blueGrey.m200,
-  greyLight: material.blueGrey.m300,
-  grey: material.blueGrey.m400,
-  greyDark: material.blueGrey.m500,
-  greyDarker: material.blueGrey.m600,
+  greyLighter: material.grey.m200,
+  greyLight: material.grey.m300,
+  grey: material.grey.m400,
+  greyDark: material.grey.m500,
+  greyDarker: material.grey.m600,
 
   dark: material.grey.m800,
   black: material.grey.m900,
@@ -159,19 +159,32 @@ export const fontWeight = {
 }
 
 export const forms = {
+  icon: {
+    color: '#dbdbdb',
+  },
   input: {
     backgroundColor: colors.white,
     border: `1px solid ${material.grey.m300}`,
     borderRadius: '0',
     boxShadow: 'none',
     fontSize: '16px',
-    height: '38px',
+    height: '36px',
     marginBottom: '24px',
     padding: '6px 10px',
     focusBorder: `1px solid ${colors.secondaryLight}`,
     width: '100%',
   },
+  select: {
+    appearance: 'button',
+    backgroundColor: colors.white,
+    border: `1px solid ${material.grey.m300}`,
+    color: 'inherit',
+    dropDownBackgroundColor: 'transparent',
+    dropDownColor: colors.greyDarker,
+    dropDownHoverColor: 'transparent',
+    fontAwesomeIcon: 'f107',
+  },
   textarea: {
-    minHeight: '95px',
+    minHeight: '120px',
   },
 }

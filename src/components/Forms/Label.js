@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const Label = styled.label`
   display: block;
   margin-bottom: 0.3rem;
+  margin-right: 0.2rem;
   font-weight: 600;
 
   ${props =>

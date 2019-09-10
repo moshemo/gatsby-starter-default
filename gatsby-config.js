@@ -39,6 +39,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-root-import',
       options: {
+        // Node Modules
+        FontAwesome: path.join(
+          __dirname,
+          'node_modules/@fortawesome/react-fontawesome'
+        ),
+
+        // SRC
         SRC: path.join(__dirname, 'src'),
 
         // Main Folders

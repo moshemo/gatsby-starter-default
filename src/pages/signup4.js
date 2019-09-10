@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import Form from 'react-jsonschema-form'
 
 import { firebase } from 'Classes'
-import { useForms } from 'Hooks'
 import { Button, Flex } from 'Components'
+import { useForms } from 'Hooks'
 import { MainLayout } from 'Layouts'
 
-const INITIAL_STATE = {
+const initialValues = {
   signUpName: '',
   signUpEmail: '',
   signUpPassword: '',
@@ -33,7 +33,7 @@ const schema = {
 
 const SignUpPage4 = () => {
   const { handleChange, handleSubmit, values } = useForms(
-    INITIAL_STATE,
+    initialValues,
     authenticateUser
   )
 
