@@ -1,17 +1,15 @@
-import React from 'react'
-
+import React, { useContext } from 'react'
 import { FontAwesomeIcon as Icon } from 'FontAwesome'
+import startCase from 'lodash/startCase'
 
 import { IconBase } from './Icon'
-
 import { InputBase } from './Base'
-import { InputButtonStyle } from './Button'
-import { InputContent } from './Content'
-import { InputSection } from './Section'
-
+import { FormikContent, InputContent } from './Content'
 import { Label } from '../Label'
 import { Message } from './Message'
-import { Select } from '../Select'
+import { InputSection } from './Section'
+
+import { FormContext } from 'Context/FormContext'
 
 const AfterInput = props => (
   <InputSection after="after">{props.after}</InputSection>
@@ -36,20 +34,37 @@ export const Input = props => {
     label,
     message,
     name,
-    noLabel,
+    placeholder,
   } = props
 
-  const labelName = name.toUppercase()
-  console.log('name: ', name)
-  console.log('labelName: ', labelName)
+  const titleCase = startCase(name)
+
+  const { noLabels, useFormik } = useContext(FormContext)
   return (
     <InputBase {...props}>
-      {!noLabel && (
-        <Label htmlFor={forId ? forId : name}>{label ? label : name}</Label>
+      {!noLabels && (
+        <Label htmlFor={forId ? forId : name}>
+          {label ? label : titleCase}
+        </Label>
       )}
       {before && <BeforeInput {...props} />}
       <InputSection>
-        <InputContent id={forId} type="text" {...props} />
+        {useFormik && (
+          <FormikContent
+            id={forId ? forId : name}
+            placeholder={placeholder ? placeholder : titleCase}
+            type="text"
+            {...props}
+          />
+        )}
+        {!useFormik && (
+          <InputContent
+            id={forId ? forId : name}
+            placeholder={placeholder ? placeholder : titleCase}
+            type="text"
+            {...props}
+          />
+        )}
         {iconLeft && <InputIcon icon={iconLeft} side="left" />}
         {iconRight && <InputIcon icon={iconRight} side="right" />}
         {message && <Message {...props}>{message}</Message>}

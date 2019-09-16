@@ -1,32 +1,35 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { Field } from 'formik'
 
 import { InputCss } from './CSS'
 import { colors, forms } from 'Variables'
 
-export const InputContent = styled.input`
+// prettier-ignore
+export const InputContentCSS = css`
   ${InputCss};
 
-  ${props => props.iconLeft && `padding-left: ${forms.input.height};`}
-  ${props => props.iconRight && `padding-right: ${forms.input.height};`}
+  ${({iconLeft}) => iconLeft && `padding-left: ${forms.input.height};`}
+  ${({iconRight}) => iconRight && `padding-right: ${forms.input.height};`}
 
-  ${props =>
-    props.plain &&
-    `
+  ${({plain}) => plain && `
     background-color: transparent;
     border: none;
     :focus { border: none; }
   `}
 
   ${props => props.fullWidth && `grid-column: 1 / -1;`}
-  ${props => {
-    if (props.error) {
-      return `border-color: ${colors.error}`
-    } else if (props.info) {
-      return `border-color: ${colors.info}`
-    } else if (props.success) {
-      return `border-color: ${colors.success}`
-    } else if (props.warning) {
-      return `border-color: ${colors.warning}`
-    }
+  ${({error, info, success, warning}) => {
+    if      (error)   { return `border-color: ${colors.error}` } 
+    else if (info)    { return `border-color: ${colors.info}` } 
+    else if (success) { return `border-color: ${colors.success}` } 
+    else if (warning) { return `border-color: ${colors.warning}` }
   }};
+`
+
+export const InputContent = styled.input`
+  ${InputContentCSS}
+`
+
+export const FormikContent = styled(Field)`
+  ${InputContentCSS}
 `

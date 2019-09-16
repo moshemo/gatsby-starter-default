@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { Button } from 'Components'
 import { forms } from 'Variables'
@@ -6,8 +6,8 @@ import { forms } from 'Variables'
 export const InputBase = styled.div`
   margin-bottom: ${forms.input.marginBottom};
 
-  ${props =>
-    (props.before || props.after) &&
+  ${(before, after) =>
+    (before || after) &&
     `
       display: flex; 
       align-items: center;
@@ -18,8 +18,6 @@ export const InputBase = styled.div`
       }
     `}
 
-  ${props => props.before && `:last-child { margin-right: -1px; }`}
-  ${props => props.after && `:last-child { margin-left: -1px; }`}
-
-
+  ${({ before }) => before && `:last-child { margin-right: -1px; }`}
+  ${({ after }) => after && `:last-child { margin-left: -1px; }`}
 `

@@ -1,20 +1,24 @@
-import styled from 'styled-components'
+import React, { useContext, useEffect } from 'react'
+import styled, { css } from 'styled-components'
+import { Form as FormikForm } from 'formik'
 
-import { InputBase } from './Input/Input'
+import { InputBase } from './Input'
 import { Label } from './Label'
 
-export const Form = styled.form`
-  ${props =>
-    props.columns &&
+import { FormContext } from 'Context'
+
+const FormCSS = css`
+  ${({ columns }) =>
+    columns &&
     `
     display: grid;
     grid-gap: 24px;
     
-    grid-template-columns: ${props.columns};}
+    grid-template-columns: ${columns};}
   `}
 
-  ${props =>
-    props.horizontal &&
+  ${({ horizontal }) =>
+    horizontal &&
     `
     ${InputBase} {
       display: grid;
@@ -28,3 +32,25 @@ export const Form = styled.form`
     }
   `}
 `
+export const FormBase = styled.form`
+  ${FormCSS}
+`
+export const FormikBase = styled(FormikForm)`
+  ${FormCSS}
+`
+
+export const Form = props => {
+  const { toggleLabels, toggleFormik, useFormik } = useContext(FormContext)
+
+  useEffect(() => {
+    const propKeys = Object.keys(props)
+    toggleLabels(propKeys.includes('noLabels'))
+    toggleFormik(propKeys.includes('formik'))
+  }, [props])
+
+  if (useFormik) {
+    return <FormikBase {...props}>{props.children}</FormikBase>
+  } else {
+    return <FormBase {...props}>{props.children}</FormBase>
+  }
+}

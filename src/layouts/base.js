@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { ThemeProvider } from 'styled-components'
 
 // import { FirebaseProvider } from 'Context'
-import { FirebaseContext } from 'Context'
+import { FormProvider } from 'Context'
 import GlobalCss from 'Global'
 import theme from 'Theme'
 
@@ -14,9 +14,11 @@ export const BaseLayout = ({ children }) => {
   return (
     <>
       <ThemeProvider theme={theme}>
-        {/* <FirebaseProvider> */}
-        <>{children}</>
-        {/* </FirebaseProvider> */}
+        <FormProvider>
+          {/* <FirebaseProvider> */}
+          <>{children}</>
+          {/* </FirebaseProvider> */}
+        </FormProvider>
       </ThemeProvider>
       <GlobalCss />
     </>

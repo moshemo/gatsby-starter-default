@@ -4,7 +4,7 @@ import { navigate } from 'gatsby'
 import { firebase } from 'Classes'
 import { Button, Flex, NavBase, NavLink } from 'Components'
 import { useForms } from 'Hooks'
-import { MainLayout } from 'Layouts'
+import { LoginLayout } from 'Layouts'
 
 const INITIAL_VALUES = {
   loginEmail: '',
@@ -31,7 +31,7 @@ const LogInPage = () => {
   }
 
   return (
-    <MainLayout>
+    <LoginLayout>
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <Flex column>
@@ -57,7 +57,7 @@ const LogInPage = () => {
       <NavBase>
         <NavLink to="/forgot">Forgot password?</NavLink>
       </NavBase>
-    </MainLayout>
+    </LoginLayout>
   )
 }
 

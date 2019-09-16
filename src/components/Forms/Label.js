@@ -6,8 +6,8 @@ export const Label = styled.label`
   margin-right: 0.2rem;
   font-weight: 600;
 
-  ${props =>
-    props.horizontal &&
+  ${({ horizontal }) =>
+    horizontal &&
     `
       display: inline-block;
       margin-left: 2.5rem;

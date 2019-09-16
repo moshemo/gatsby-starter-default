@@ -159,32 +159,40 @@ export const fontWeight = {
 }
 
 export const forms = {
+  button: {
+    borderRadius: '0',
+  },
+  disabled: {
+    backgroundColor: colors.light,
+    borderColor: colors.light,
+    boxShadow: 'none',
+    color: colors.greyDark,
+  },
   icon: {
     color: '#dbdbdb',
   },
   input: {
     backgroundColor: colors.white,
     border: `1px solid ${material.grey.m300}`,
-    borderRadius: '0',
+    borderRadius: '4px',
     boxShadow: 'none',
     fontSize: '16px',
     height: '36px',
-    marginBottom: '24px',
+    marginBottom: '18px',
     padding: '6px 10px',
     focusBorder: `1px solid ${colors.secondaryLight}`,
     width: '100%',
   },
-  select: {
-    appearance: 'button',
-    backgroundColor: colors.white,
-    border: `1px solid ${material.grey.m300}`,
-    color: 'inherit',
-    dropDownBackgroundColor: 'transparent',
-    dropDownColor: colors.greyDarker,
-    dropDownHoverColor: 'transparent',
-    fontAwesomeIcon: 'f107',
-  },
   textarea: {
     minHeight: '120px',
   },
+}
+
+export const button = {
+  backgroundColor: colors.primaryDark,
+  borderRadius: '.3em',
+  boxShadow: 'none',
+  color: colors.light,
+  fontSize: '14px',
+  fontWeight: '700',
 }

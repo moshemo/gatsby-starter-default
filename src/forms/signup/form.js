@@ -1,8 +1,14 @@
 import React from 'react'
-import { ErrorMessage, Form } from 'formik'
+import { ErrorMessage } from 'formik'
 
 import { Button } from 'Components'
-import { TextInput as Text, Email, Password } from 'Components/Forms'
+import {
+  Form,
+  Input,
+  TextInput as Text,
+  Email,
+  Password,
+} from 'Components/Forms'
 
 export const FormComp = props => {
   const {
@@ -16,45 +22,27 @@ export const FormComp = props => {
     touched,
     values,
   } = props
-  // console.table(props)
 
-  // const change = (name, event) => {
-  //   event.persist()
-  //   handleBlur(event)
-  //   handleChange(event)
-  //   setFieldTouched(name, true, false)
-  // }
   return (
-    <Form>
+    <Form noLabels>
       <h3>Sign Up</h3>
       <Text
-        id="name"
-        label="Name"
         name="name"
+        placeholder="Enter your name"
         onBlur={handleBlur}
         onChange={handleChange}
         value={values.name}
       />
       <ErrorMessage component="p" name="name" />
       <Email
-        id="email"
-        label="Email 1"
         name="email"
-        onBlur={handleBlur}
-        onChange={handleChange}
-        value={values.email}
-      />
-      <Email
-        id="email"
-        name="email2"
+        // placeholder="Enter your Email"
         onBlur={handleBlur}
         onChange={handleChange}
         value={values.email}
       />
       <ErrorMessage component="p" name="email" />
       <Password
-        id="password"
-        label="Password"
         name="password"
         onBlur={handleBlur}
         onChange={handleChange}
@@ -62,8 +50,6 @@ export const FormComp = props => {
       />
       <ErrorMessage component="p" name="password" />
       <Password
-        id="confirmPassword"
-        label="Confirm Password"
         name="confirmPassword"
         onBlur={handleBlur}
         onChange={handleChange}

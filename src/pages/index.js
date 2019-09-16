@@ -1,27 +1,27 @@
 import React from 'react'
 // import React from 'react'
 
-import { Button } from 'Components'
-import { Form, TextInput, Email, Password } from 'Components/Forms'
+// import { Button } from 'Components'
+// import { Form, TextInput, Email, Password } from 'Components/Forms'
 // import { Button, Flex } from 'Components'
-import { useValidation } from 'Hooks'
+// import { useValidation } from 'Hooks'
 // import { useValidation } from 'Hooks'
 import { MainLayout } from 'Layouts'
 // import { MainLayout } from 'Layouts'
 
-const initialValues = {
-  signUpName: '',
-  signUpEmail: '',
-  signUpPassword: '',
-}
+// const initialValues = {
+//   signUpName: '',
+//   signUpEmail: '',
+//   signUpPassword: '',
+// }
 
 const HomePage = () => {
-  const { handleChange, values } = useValidation(initialValues)
+  // const { handleChange, values } = useValidation(initialValues)
 
   return (
     <MainLayout>
       <h1>SignUp</h1>
-      <Form>
+      {/* <Form>
         <TextInput
           autoComplete="off"
           name="signUpName"
@@ -44,10 +44,10 @@ const HomePage = () => {
           placeholder="Password"
           type="password"
           value={values.signUpPassword}
-        />
-        {/* {authError && <p>{authError}</p>} */}
-        <Button type="submit">Submit</Button>
-      </Form>
+        /> */}
+      {/* {authError && <p>{authError}</p>} */}
+      {/* <Button type="submit">Submit</Button>
+      </Form> */}
     </MainLayout>
   )
 }
