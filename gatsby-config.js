@@ -86,6 +86,15 @@ module.exports = {
         path: `${__dirname}/src/news`,
       },
     },
+    // {
+    //   resolve: `gatsby-source-graphql`,
+    //   options: {
+    //     typeName: 'WORDPRESS',
+    //     fieldName: 'wordpress',
+    //     url: 'http://wordpress-285784-939255.cloudwaysapps.com/graphql',
+    //     refetchInterval: 60,
+    //   },
+    // },
     {
       resolve: `gatsby-source-rss-feed`,
       options: {
@@ -98,6 +107,30 @@ module.exports = {
             item: ['itunes:duration'],
           },
         },
+      },
+    },
+    {
+      resolve: 'gatsby-source-wordpress',
+      options: {
+        baseUrl: 'wordpress-285784-939255.cloudwaysapps.com',
+        protocol: 'http',
+        hostingWPCOM: false,
+        useACF: true,
+        verboseOutput: true,
+        perPage: 100,
+        concurrentRequests: 10,
+        // See: https://github.com/isaacs/minimatch
+        includedRoutes: [
+          '**/categories',
+          '**/posts',
+          '**/pages',
+          '**/article',
+          '**/test',
+          '**/media',
+          '**/tags',
+          '**/taxonomies',
+          '**/users',
+        ],
       },
     },
 
