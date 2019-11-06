@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { BaseLayout as Layout } from './base'
+import { BaseLayout } from './base'
 import { Grid } from './Grids/Grid'
 import { Header } from './Header/Header'
 import { ContentBase as Content } from './Content/ContentStyles'
@@ -14,7 +14,7 @@ const MainLayout = ({ children }) => {
   // const { title } = MetaData()
 
   return (
-    <Layout>
+    <BaseLayout>
       <Header />
       <Container>
         <Grid>
@@ -23,7 +23,7 @@ const MainLayout = ({ children }) => {
         </Grid>
       </Container>
       <Footer />
-    </Layout>
+    </BaseLayout>
   )
 }
 

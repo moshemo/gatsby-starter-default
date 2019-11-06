@@ -1,5 +1,5 @@
 {
-  "name": "young-startup-custom-organized-updated-feeds",
+  "name": "young-startup-custom-gatsby-source-wordpress",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
@@ -18,6 +18,7 @@
     "gatsby-plugin-svgr": "2.0.2",
     "gatsby-source-filesystem": "^2.0.36",
     "gatsby-source-rss-feed": "1.1.1",
+    "gatsby-source-wordpress": "3.1.11",
     "gatsby-transformer-remark": "2.6.8",
     "gatsby-transformer-sharp": "^2.1.19",
     "minireset.css": "0.0.5",

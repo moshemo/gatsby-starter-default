@@ -24,6 +24,5 @@ export const ContainerCSS = css`
 
 export const Container = styled.div`
   ${ContainerCSS}
-
   ${space}
 `
